@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediBook India | Hospital Appointment Booking</title>
+  <meta name="description" content="Book hospital appointments across India online. Fast, secure & professional appointment booking for any hospital." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+            medical: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<!-- ========== NAVBAR ========== -->
+  <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center shadow-lg">
+            <i class="fas fa-hospital text-white text-lg"></i>
+          </div>
+          <div>
+            <span class="text-xl font-bold text-slate-900 tracking-tight">MediBook</span>
+            <span class="text-primary-600 font-semibold"> India</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Home</a>
+          <a href="#book" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Book Appointment</a>
+          <a href="#how" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">How It Works</a>
+          <a href="#contact" class="text-sm font-medium text-slate-600 hover:text-primary-600 transition">Contact</a>
+        </div>
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="tel:+918100458743" class="flex items-center gap-2 text-sm font-medium text-primary-700 hover:text-primary-800 transition">
+            <i class="fas fa-phone-alt"></i> +91 81004 58743
+          </a>
+          <a href="#book" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition shadow-md shadow-primary-600/20">
+            <i class="fas fa-calendar-check"></i> Book Now
+          </a>
+        </div>
+        <!-- Mobile menu button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#home" class="block py-2 text-slate-700 font-medium">Home</a>
+        <a href="#book" class="block py-2 text-slate-700 font-medium">Book Appointment</a>
+        <a href="#how" class="block py-2 text-slate-700 font-medium">How It Works</a>
+        <a href="#contact" class="block py-2 text-slate-700 font-medium">Contact</a>
+        <a href="tel:+918100458743" class="flex items-center gap-2 py-2 text-primary-700 font-semibold">
+          <i class="fas fa-phone-alt"></i> +91 81004 58743
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero-gradient text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full logo-pulse"></span>
+            Trusted by patients across India
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+            Book Hospital<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-200">Appointments</span><br />
+            Anywhere in India
+          </h1>
+          <p class="text-lg text-blue-100/90 mb-8 max-w-lg leading-relaxed">
+            Instantly request appointments at any hospital across India. Just call us — our team coordinates with the hospital and confirms your slot.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#book" class="inline-flex items-center gap-2 bg-white text-primary-800 font-semibold px-6 py-3.5 rounded-xl hover:bg-blue-50 transition shadow-xl">
+              <i class="fas fa-stethoscope"></i> Book Appointment
+            </a>
+            <a href="tel:+918100458743" class="inline-flex items-center gap-2 border border-white/30 text-white font-medium px-6 py-3.5 rounded-xl hover:bg-white/10 transition">
+              <i class="fas fa-phone-alt"></i> +91 81004 58743
+            </a>
+          </div>
+          <div class="mt-10 flex items-center gap-6 text-sm text-blue-200">
+            <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-green-400"></i> Secure & Private</div>
+            <div class="flex items-center gap-2"><i class="fas fa-clock text-green-400"></i> Quick Response</div>
+            <div class="flex items-center gap-2"><i class="fas fa-hospital text-green-400"></i> All Hospitals</div>
+          </div>
+        </div>
+        <div class="hidden md:block relative">
+          <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-user-md text-white text-2xl"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-lg">24×7 Support</p>
+                <a href="tel:+918100458743" class="text-blue-200 text-sm hover:text-white transition">Call: +91 81004 58743</a>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span class="text-sm">Any hospital in India</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span class="text-sm">Free coordination service</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/5 rounded-xl p-3">
+                <i class="fas fa-check-circle text-green-400"></i>
+                <span class="text-sm">Confirmation within hours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-primary-700">500+</p>
+          <p class="text-sm text-slate-500 mt-1">Hospitals Covered</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-primary-700">28</p>
+          <p class="text-sm text-slate-500 mt-1">States & UTs</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-primary-700">10k+</p>
+          <p class="text-sm text-slate-500 mt-1">Appointments Booked</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-primary-700">4.9★</p>
+          <p class="text-sm text-slate-500 mt-1">Patient Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="how" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl font-bold text-slate-900 mb-3">How It Works</h2>
+        <p class="text-slate-500 max-w-xl mx-auto">Simple 3-step process to get your hospital appointment confirmed</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 card-shadow border border-slate-100 text-center">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl font-bold">1</div>
+          <h3 class="text-lg font-semibold mb-2">Call Us</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Call +91 81004 58743 and share patient details, preferred hospital, specialty and date.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 card-shadow border border-slate-100 text-center">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl font-bold">2</div>
+          <h3 class="text-lg font-semibold mb-2">We Coordinate</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Our team contacts the hospital on your behalf and finds the best available slot.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 card-shadow border border-slate-100 text-center">
+          <div class="w-14 h-14 bg-primary-100 text-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl font-bold">3</div>
+          <h3 class="text-lg font-semibold mb-2">Get Confirmation</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">You receive appointment confirmation with doctor name, date, time and hospital details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOK APPOINTMENT (Call) ========== -->
+  <section id="book" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 bg-primary-50 text-primary-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+        <i class="fas fa-calendar-check"></i> Book Appointment
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900 mb-3">Book Your Hospital Appointment</h2>
+      <p class="text-slate-500 mb-8 max-w-xl mx-auto">
+        Appointment booking ke liye seedha call karein. Hamari team aapko help karegi kisi bhi hospital ka appointment book karne mein.
+      </p>
+      <div class="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 card-shadow">
+        <div class="w-16 h-16 bg-primary-100 text-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <p class="text-slate-600 mb-2">Appointment Booking Number</p>
+        <a href="tel:+918100458743" class="text-3xl sm:text-4xl font-bold text-primary-700 hover:text-primary-800 transition tracking-wide">
+          +91 81004 58743
+        </a>
+        <p class="text-sm text-slate-400 mt-4 mb-8">Available for appointment requests across India</p>
+        <a href="tel:+918100458743" class="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3.5 rounded-xl transition shadow-lg shadow-primary-600/25">
+          <i class="fas fa-phone"></i>
+          <span>Call Now to Book</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="py-16 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100">
+          <div class="w-12 h-12 bg-blue-50 text-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-map-marked-alt text-xl"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-slate-800">Pan-India Coverage</h4>
+            <p class="text-sm text-slate-500 mt-1">Request appointments at any hospital in any city across India.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100">
+          <div class="w-12 h-12 bg-green-50 text-medical-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-user-shield text-xl"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-slate-800">Privacy First</h4>
+            <p class="text-sm text-slate-500 mt-1">Your medical information is handled securely and shared only with necessary staff.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 p-5 bg-white rounded-2xl border border-slate-100">
+          <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-headset text-xl"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-slate-800">Dedicated Support</h4>
+            <p class="text-sm text-slate-500 mt-1">Human coordinators help you get the right appointment faster.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER / CONTACT ========== -->
+  <footer id="contact" class="bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid md:grid-cols-3 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center">
+              <i class="fas fa-hospital text-white"></i>
+            </div>
+            <span class="text-xl font-bold text-white">MediBook <span class="text-primary-400">India</span></span>
+          </div>
+          <p class="text-sm leading-relaxed text-slate-400">
+            India's trusted platform for booking hospital appointments online. We connect patients with hospitals across the country.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+            <li><a href="#book" class="hover:text-white transition">Book Appointment</a></li>
+            <li><a href="#how" class="hover:text-white transition">How It Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4">Contact Admin</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <i class="fas fa-envelope text-primary-400"></i>
+              <span>admin@medibookindia.com</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-phone text-primary-400"></i>
+              <a href="tel:+918100458743" class="hover:text-white transition">+91 81004 58743</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-map-marker-alt text-primary-400"></i>
+              <span>New Delhi, India</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+        © 2025 MediBook India. All rights reserved. | Helping patients get the care they need.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
